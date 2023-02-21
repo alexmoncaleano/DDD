@@ -1,15 +1,16 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso;
+package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.Producto;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.MateriaPrimaCreada;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto.MateriaPrimaCreada;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.ProductoId;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;
+import com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.UseCaseForEvent;
 import com.FabricaAlimentoMascotas.ControlProduccion.negocio.gateways.Repositorio;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CantidadIngredientesCasoUso implements UseCaseForEvent<MateriaPrimaCreada>{
+public class CantidadIngredientesCasoUso implements UseCaseForEvent<MateriaPrimaCreada> {
 
     private Repositorio repositorio;
 

@@ -1,12 +1,13 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso;
+package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto;
 
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.AgregarStockCommand;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.producto.AgregarStockCommand;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.entitys.Receta;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.enums.WeightUnit;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.enums.Moneda;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.ProductoCreado;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto.ProductoCreado;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;
+import com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto.AgregarStockCasoUso;
 import com.FabricaAlimentoMascotas.ControlProduccion.negocio.gateways.Repositorio;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

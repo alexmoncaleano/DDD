@@ -1,4 +1,4 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.commands;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.Command;
 

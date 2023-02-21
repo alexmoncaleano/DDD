@@ -23,8 +23,8 @@ public class Nombre implements ValueObject<Nombre.Props> {
     }
 
     private String validarDato(String dato){
-        if (dato.length() > 10) {
-            throw new IllegalArgumentException("No puede tener más de 10 caracteres");
+        if (dato.length() > 20) {
+            throw new IllegalArgumentException("No puede tener más de 20 caracteres");
         }
         if (!dato.matches("[a-zA-Z]+")) {
             throw new IllegalArgumentException("Solo puede contener letras");

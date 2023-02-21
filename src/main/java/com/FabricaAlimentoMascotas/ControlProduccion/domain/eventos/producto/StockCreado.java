@@ -1,4 +1,4 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Cantidad;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.DetalleStock;

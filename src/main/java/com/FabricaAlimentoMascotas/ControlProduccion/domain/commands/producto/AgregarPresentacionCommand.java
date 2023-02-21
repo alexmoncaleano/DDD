@@ -1,15 +1,17 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.commands;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.enums.Moneda;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.enums.WeightUnit;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Presentacion;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.Command;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
-public class AgregarStockCommand extends Command {
+public class AgregarPresentacionCommand extends Command {
 
+    //Producto
     private String productoId;
-    private Integer unidades;
     //Cantidad
     private Integer cantidad;
     private WeightUnit unidadMedida;
@@ -17,7 +19,13 @@ public class AgregarStockCommand extends Command {
     private BigDecimal precio;
     private Moneda moneda;
 
-    public AgregarStockCommand(){}
+    public AgregarPresentacionCommand(String productoId, Integer cantidad, WeightUnit unidadMedida, BigDecimal precio, Moneda moneda) {
+        this.productoId = productoId;
+        this.cantidad = cantidad;
+        this.unidadMedida = unidadMedida;
+        this.precio = precio;
+        this.moneda = moneda;
+    }
 
     public String getProductoId() {
         return productoId;
@@ -25,14 +33,6 @@ public class AgregarStockCommand extends Command {
 
     public void setProductoId(String productoId) {
         this.productoId = productoId;
-    }
-
-    public Integer getUnidades() {
-        return unidades;
-    }
-
-    public void setUnidades(Integer unidades) {
-        this.unidades = unidades;
     }
 
     public Integer getCantidad() {

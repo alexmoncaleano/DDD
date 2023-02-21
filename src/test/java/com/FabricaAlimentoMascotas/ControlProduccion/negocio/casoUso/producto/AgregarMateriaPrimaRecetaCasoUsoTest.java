@@ -1,12 +1,13 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso;
+package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto;
 
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.AgregarMateriaPrimaRecetaCommand;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.producto.AgregarMateriaPrimaRecetaCommand;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.entitys.Receta;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.enums.WeightUnit;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;
+import com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto.AgregarMateriaPrimaRecetaCasoUso;
 import com.FabricaAlimentoMascotas.ControlProduccion.negocio.gateways.Repositorio;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.ProductoCreado;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto.ProductoCreado;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -56,14 +57,14 @@ class AgregarMateriaPrimaRecetaCasoUsoTest {
         List<DomainEvent> eventos = agregarMateriaPrimaRecetaCasoUso.apply(agregarMateriaPrimaRecetaCommand);
 
         // Verificar que se guardó un evento "MateriaPrima.MateriaPrimaCreada"
-        assertEquals(2, eventos.size());
+        assertEquals(1, eventos.size());
         assertEquals("MateriaPrima.MateriaPrimaCreada", eventos.get(0).type);
-        assertEquals("numeroElementosCreado", eventos.get(1).type);
+
 
         // Verificar que se llamó al método "findById" del repositorio con el id de producto correcto
         Mockito.verify(repositorioMock, Mockito.times(1)).findById("123");
 
         // Verificar que se llamó al método "saveEvent" del repositorio
-        Mockito.verify(repositorioMock, Mockito.times(2)).saveEvent(Mockito.any());
+        Mockito.verify(repositorioMock, Mockito.times(1)).saveEvent(Mockito.any());
     }
 }

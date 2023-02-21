@@ -1,7 +1,8 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso;
+package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto;
 
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.CrearProductoCommand;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.producto.CrearProductoCommand;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;
+import com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto.CrearProductoCasoUso;
 import com.FabricaAlimentoMascotas.ControlProduccion.negocio.gateways.Repositorio;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -1,15 +1,16 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso;
+package com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.Producto;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.AgregarStockCommand;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.commands.producto.AgregarStockCommand;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;
+import com.FabricaAlimentoMascotas.ControlProduccion.negocio.casoUso.UseCaseForCommand;
 import com.FabricaAlimentoMascotas.ControlProduccion.negocio.gateways.Repositorio;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AgregarStockCasoUso implements UseCaseForCommand<AgregarStockCommand>{
+public class AgregarStockCasoUso implements UseCaseForCommand<AgregarStockCommand> {
 
     private Repositorio repositorio;
 

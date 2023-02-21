@@ -8,12 +8,12 @@ import java.util.Objects;
 
 public class Detalle implements ValueObject<Detalle.Props> {
 
-    private Producto producto;
+    private ProductoId producto;
     private Integer cantidad;
     private Presentacion presentacion;
     private Precio total;
 
-    public Detalle(Producto producto, Integer cantidad, Presentacion presentacion) {
+    public Detalle(ProductoId producto, Integer cantidad, Presentacion presentacion) {
         this.producto = Objects.requireNonNull(producto, "El producto no puede ser nulo");
         this.cantidad = Objects.requireNonNull(validarCantidad(cantidad), "La cantidad no puede ser nula");
         this.presentacion = Objects.requireNonNull(presentacion, "La presentacion no puede ser nula");
@@ -35,7 +35,7 @@ public class Detalle implements ValueObject<Detalle.Props> {
     public Props value() {
         return new Props() {
             @Override
-            public Producto producto() {
+            public ProductoId producto() {
                 return producto;
             }
 
@@ -57,7 +57,7 @@ public class Detalle implements ValueObject<Detalle.Props> {
     }
 
     public interface Props{
-        Producto producto();
+        ProductoId producto();
         Integer cantidad();
         Presentacion presentacion();
         Precio total();

@@ -1,10 +1,7 @@
 package com.FabricaAlimentoMascotas.ControlProduccion.domain;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.entitys.Receta;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.DetalleStockCreado;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.MateriaPrimaCreada;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.ProductoCreado;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.numeroElementosCreado;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.AggregateRoot;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;
@@ -37,6 +34,9 @@ public class Producto extends AggregateRoot<ProductoId> {
         return producto;
     }
 
+    public void agregarPresentacion(Cantidad cantidad, Precio precio){
+        appendChange(new PresentacionCreada(cantidad, precio));
+    }
     public void agregarMateriaPrima(String nombre, Cantidad cantidad){
         appendChange(new MateriaPrimaCreada(nombre, cantidad)).apply();
     }
@@ -48,6 +48,6 @@ public class Producto extends AggregateRoot<ProductoId> {
     }
 
     public void numeroIngredientes(Set<MateriaPrima> receta){
-        appendChange(new numeroElementosCreado(receta)).apply();
+        appendChange(new NumeroElementosCreado(receta)).apply();
     }
 }

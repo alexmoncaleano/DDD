@@ -1,4 +1,4 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Cantidad;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Precio;
@@ -10,7 +10,7 @@ public class PresentacionCreada extends DomainEvent {
     private final Precio precio;
 
 
-    public PresentacionCreada(String type, Cantidad cantidad, Precio precio) {
+    public PresentacionCreada(Cantidad cantidad, Precio precio) {
         super("Presentacion.PresentacionCreada");
         this.cantidad = cantidad;
         this.precio = precio;

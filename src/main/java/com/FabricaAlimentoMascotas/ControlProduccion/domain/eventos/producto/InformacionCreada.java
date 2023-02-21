@@ -1,4 +1,4 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Presentacion;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.DomainEvent;

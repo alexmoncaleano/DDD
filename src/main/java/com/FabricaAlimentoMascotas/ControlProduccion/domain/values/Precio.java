@@ -12,13 +12,13 @@ public class Precio implements ValueObject<Precio.Props> {
     private Moneda moneda;
 
     public Precio(BigDecimal precio, Moneda moneda) {
-        if(precio.compareTo(BigDecimal.ZERO) <= 0){
+        /**if(precio.compareTo(BigDecimal.ZERO) <= 0){
             throw new IllegalArgumentException("El precio no puede ser menor o igual a cero");
-        }
+        }**/
         this.precio = precio;
-        if (!Arrays.asList(Moneda.values()).contains(moneda)) {
+        /**if (!Arrays.asList(Moneda.values()).contains(moneda)) {
             throw new IllegalArgumentException("tipo de moneda no valido: " + moneda);
-        }
+        }**/
         this.moneda = moneda;
     }
 

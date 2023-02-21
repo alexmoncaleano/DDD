@@ -1,22 +1,17 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.entitys;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.values;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.enums.Moneda;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Detalle;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Precio;
-import com.FabricaAlimentoMascotas.ControlProduccion.generic.Entity;
-import com.FabricaAlimentoMascotas.ControlProduccion.generic.Identity;
+import com.FabricaAlimentoMascotas.ControlProduccion.generic.ValueObject;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 import java.util.Set;
 
-public class Compra extends Entity<Identity> {
+public class Compra implements ValueObject<Compra.Props> {
     private Set<Detalle> detallesCompra;
     private Precio precioTotal;
 
-    public Compra(Identity id, Set<Detalle> detallesCompra) {
-        super(id);
-        validateDetallesCompra(detallesCompra);
+    public Compra(Set<Detalle> detallesCompra) {
+        //validateDetallesCompra(detallesCompra);
         this.detallesCompra = detallesCompra;
         this.precioTotal = calcularPrecioTotal();
     }
@@ -43,4 +38,27 @@ public class Compra extends Entity<Identity> {
         }
         return new Precio(total, tipoMoneda);
     }
+
+    @Override
+    public Props value() {
+        return new Props() {
+            @Override
+            public Set<Detalle> detallesCompra() {
+                return detallesCompra;
+            }
+
+            @Override
+            public Precio precio() {
+                return precioTotal;
+            }
+        };
+    }
+
+
+    public interface Props{
+        Set<Detalle> detallesCompra();
+        Precio precio();
+    }
+
+
 }

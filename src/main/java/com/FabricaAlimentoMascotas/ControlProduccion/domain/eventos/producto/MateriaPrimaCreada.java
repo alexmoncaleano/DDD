@@ -1,4 +1,4 @@
-package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos;
+package com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Informacion;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.Cantidad;
@@ -16,7 +16,7 @@ public class MateriaPrimaCreada extends DomainEvent {
         super("MateriaPrima.MateriaPrimaCreada");
         this.nombre = nombre;
         this.cantidad = cantidad;
-        new numeroElementosCreado(new HashSet<MateriaPrima>());
+        new NumeroElementosCreado(new HashSet<MateriaPrima>());
 
     }
 

@@ -1,7 +1,9 @@
 package com.FabricaAlimentoMascotas.ControlProduccion.domain;
 
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.entitys.Receta;
-import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.*;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.ordenEntrega.DetalleCompraCreado;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.ordenEntrega.OrdenEntregaCreada;
+import com.FabricaAlimentoMascotas.ControlProduccion.domain.eventos.producto.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.domain.values.*;
 import com.FabricaAlimentoMascotas.ControlProduccion.generic.EventChange;
 
@@ -29,7 +31,7 @@ public class ProductoChange extends EventChange {
             producto.receta.listaIngredientes().add(materiaPrima);
         });
 
-        apply((numeroElementosCreado event) -> {
+        apply((NumeroElementosCreado event) -> {
             Integer numeroIngredientes = event.getCantidadIngredientes();
             producto.elementosReceta = numeroIngredientes;
         });
