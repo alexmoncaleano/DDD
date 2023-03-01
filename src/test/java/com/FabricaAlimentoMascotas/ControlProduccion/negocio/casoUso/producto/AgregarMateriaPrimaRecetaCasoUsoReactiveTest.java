@@ -40,6 +40,7 @@ class AgregarMateriaPrimaRecetaCasoUsoReactiveTest {
         // Agregamos el evento a un flux de DomainEvent
         Flux<DomainEvent> eventosProducto = Flux.just(producto);
         // Configurar el comportamiento del repositorio mock
+
         Mockito.when(repositorioMock.findByIdReactive(Mockito.any())).thenReturn(eventosProducto);
 
         // Crear el caso de uso
@@ -56,7 +57,7 @@ class AgregarMateriaPrimaRecetaCasoUsoReactiveTest {
         Flux<DomainEvent> eventos = agregarMateriaPrimaRecetaCasoUsoReactive.apply(Mono.just(agregarMateriaPrimaRecetaCommand));
 
         // Verificar que se guardó un evento "MateriaPrima.MateriaPrimaCreada"
-        assertEquals(2, eventos.count().block());
+        assertEquals(1, eventos.count().block());
 
         // Verificar que se llamó al método "findById" del repositorio con el id de producto correcto
         Mockito.verify(repositorioMock, Mockito.times(1)).findByIdReactive("123");

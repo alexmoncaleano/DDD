@@ -27,7 +27,6 @@ public class AgregarMateriaPrimaRecetaCasoUsoReactive extends UseCaseForCommandR
                     Producto producto = Producto.from(ProductoId.of(command.getProductoId()), domainEvents);
                     producto.agregarMateriaPrima(command.getNombre(),
                             new Cantidad(command.getCantidad(), command.getUnidadMedida()));
-                    producto.numeroIngredientes(producto.consultarReceta().listaIngredientes());
                     return producto.getUncommittedChanges();
                 }).map(domainEvent -> repositorio.saveEvent(domainEvent))
         );
